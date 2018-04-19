@@ -41,6 +41,7 @@ def processData(dataFilePath):
             print('Processing image: ', i)
         image = cv.imread(filename)
         image = cv.resize(image, (0,0), fx=0.1, fy=0.1)
+        image = image / 255
         trainingData.append(image)
         trainingLabels.append(0)
         i = i + 1
@@ -51,6 +52,7 @@ def processData(dataFilePath):
             print('Processing image: ', i)
         image = cv.imread(filename)
         image = cv.resize(image, (0,0), fx=0.1, fy=0.1)
+        image = image / 255
         trainingData.append(image)
         trainingLabels.append(1)
         i = i + 1
@@ -65,6 +67,7 @@ def processData(dataFilePath):
             print('Processing image: ', i)
         image = cv.imread(filename)
         image = cv.resize(image, (0,0), fx=0.1, fy=0.1)
+        image = image / 255
         validationData.append(image)
         validationLabels.append(0)
         i = i + 1
@@ -76,6 +79,7 @@ def processData(dataFilePath):
             print('Processing image: ', i)
         image = cv.imread(filename)
         image = cv.resize(image, (0,0), fx=0.1, fy=0.1)
+        image = image / 255
         validationData.append(image)
         validationLabels.append(1)
         i = i + 1
@@ -89,6 +93,9 @@ def processData(dataFilePath):
     trainingTime = endTime - startTime
     print("Total image processing time: ", trainingTime, "s")
     return dataSet
-    
+
+# image = cv.imread('/Users/ftnabulsi/cs596/finalproject/data/train/NORMAL/IM-0636-0001.jpeg')
+# image = cv.resize(image, (0,0), fx = 0.1, fy=0.1)
+# image = image/255    
 # plt.imshow(image, cmap='gray', interpolation='bicubic')
 # plt.show()
